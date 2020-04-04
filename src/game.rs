@@ -1,3 +1,5 @@
+// mod components;
+
 use amethyst::prelude::*;
 
 pub struct Game;

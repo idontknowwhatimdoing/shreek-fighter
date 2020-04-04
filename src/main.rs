@@ -1,6 +1,5 @@
 mod game;
 // mod systems;
-// mod components;
 
 use amethyst::{
 	core::transform::TransformBundle,

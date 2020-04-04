@@ -1,21 +1,36 @@
 use amethyst::assets::{AssetStorage, Handle, Loader};
 use amethyst::core::transform::Transform;
-use amethyst::ecs::prelude::{Component, DenseVecStorage};
+use amethyst::ecs::prelude::{Component, NullStorage};
 use amethyst::prelude::*;
 use amethyst::renderer::{
-	formats::texture::ImageFormat, SpriteRender, SpriteSheet, SpriteSheetFormat, Texture,
+	formats::texture::ImageFormat, Camera, SpriteRender, SpriteSheet, SpriteSheetFormat, Texture,
 };
+use amethyst::window::ScreenDimensions;
 
 pub struct Game;
 
 impl SimpleState for Game {
 	fn on_start(&mut self, data: StateData<'_, GameData<'_, '_>>) {
-		let mut world = data.world;
-		let shrek_spritesheet = load_shrek_spritesheet(&mut world);
+		let world = data.world;
+		world.register::<Moveable>();
 
-		// initialize_background();
-		initialize_shrek(&mut world, shrek_spritesheet);
+		let dim = (*world.read_resource::<ScreenDimensions>()).clone();
+		init_camera(world, dim);
+
+		let shrek_spritesheet = load_shrek_spritesheet(world);
+		init_shrek(world, shrek_spritesheet);
 	}
+}
+
+fn init_camera(world: &mut World, dim: ScreenDimensions) {
+	let mut transform = Transform::default();
+	transform.set_translation_xyz(dim.width() / 2.0, dim.height() / 2.0, 1.0);
+
+	world
+		.create_entity()
+		.with(transform)
+		.with(Camera::standard_2d(dim.width(), dim.height()))
+		.build();
 }
 
 fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
@@ -35,7 +50,7 @@ fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
 	)
 }
 
-fn initialize_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
+fn init_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
 	let mut transform = Transform::default();
 	transform.set_translation_xyz(50.0, 200.0, 0.0);
 
@@ -46,25 +61,17 @@ fn initialize_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) 
 
 	world
 		.create_entity()
-		.with(Shrek::new(50.0, 50.0))
 		.with(transform)
+		.with(Moveable)
 		.with(sprite_render)
 		.build();
 }
 
-// -----------------------[[ COMPONENTS ]]-----------------------------------------------
+// ---[[ COMPONENTS ]]---
 
-struct Shrek {
-	height: f32,
-	width: f32,
-}
+#[derive(Default)]
+struct Moveable;
 
-impl Shrek {
-	fn new(width: f32, height: f32) -> Self {
-		Shrek { width, height }
-	}
-}
-
-impl Component for Shrek {
-	type Storage = DenseVecStorage<Self>;
+impl Component for Moveable {
+	type Storage = NullStorage<Self>;
 }

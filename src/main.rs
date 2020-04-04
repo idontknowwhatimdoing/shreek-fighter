@@ -1,4 +1,6 @@
 mod game;
+// mod systems;
+// mod components;
 
 use amethyst::{
 	core::transform::TransformBundle,
@@ -23,10 +25,7 @@ fn main() -> amethyst::Result<()> {
 	let game_data = GameDataBuilder::default()
 		.with_bundle(
 			RenderingBundle::<DefaultBackend>::new()
-				.with_plugin(
-					RenderToWindow::from_config_path(display_config_path)?
-						.with_clear([0.34, 0.36, 0.52, 1.0]),
-				)
+				.with_plugin(RenderToWindow::from_config_path(display_config_path)?)
 				.with_plugin(RenderFlat2D::default()),
 		)?
 		.with_bundle(TransformBundle::new())?;

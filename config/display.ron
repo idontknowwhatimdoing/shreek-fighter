@@ -1,0 +1,4 @@
+(
+  title: "SHREEK FIGHTER",
+  dimensions: Some((1000, 600)),
+)

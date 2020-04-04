@@ -5,7 +5,12 @@ use amethyst::prelude::*;
 use amethyst::renderer::{
 	formats::texture::ImageFormat, Camera, SpriteRender, SpriteSheet, SpriteSheetFormat, Texture,
 };
-use amethyst::window::ScreenDimensions;
+
+pub const ARENA_WIDTH: f32 = 583.33;
+pub const ARENA_HEIGHT: f32 = 350.0;
+pub const SHREK_WIDTH: f32 = 34.0;
+pub const SHREK_HEIGHT: f32 = 43.0;
+// pub const GROUND_HEIGHT: f32 = 40.0;
 
 pub struct Game;
 
@@ -14,36 +19,35 @@ impl SimpleState for Game {
 		let world = data.world;
 		world.register::<Moveable>();
 
-		let dim = (*world.read_resource::<ScreenDimensions>()).clone();
-		init_camera(world, dim);
+		init_camera(world);
 
 		let shrek_spritesheet = load_shrek_spritesheet(world);
 		init_shrek(world, shrek_spritesheet);
 	}
 }
 
-fn init_camera(world: &mut World, dim: ScreenDimensions) {
+fn init_camera(world: &mut World) {
 	let mut transform = Transform::default();
-	transform.set_translation_xyz(dim.width() / 2.0, dim.height() / 2.0, 1.0);
+	transform.set_translation_xyz(ARENA_WIDTH / 2.0, ARENA_HEIGHT / 2.0, 1.0);
 
 	world
 		.create_entity()
 		.with(transform)
-		.with(Camera::standard_2d(dim.width(), dim.height()))
+		.with(Camera::standard_2d(ARENA_WIDTH, ARENA_HEIGHT))
 		.build();
 }
 
 fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
 	let loader = world.read_resource::<Loader>();
 	let texture_handle = loader.load(
-		"assets/textures/shrek_spritesheet.png",
+		"textures/shrek_walk_spritesheet.png",
 		ImageFormat::default(),
 		(),
 		&world.read_resource::<AssetStorage<Texture>>(),
 	);
 
 	loader.load(
-		"assets/textures/shrek_spritesheet.ron",
+		"textures/shrek_walk_spritesheet.ron",
 		SpriteSheetFormat(texture_handle),
 		(),
 		&world.read_resource::<AssetStorage<SpriteSheet>>(),
@@ -52,7 +56,7 @@ fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
 
 fn init_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
 	let mut transform = Transform::default();
-	transform.set_translation_xyz(50.0, 200.0, 0.0);
+	transform.set_translation_xyz(SHREK_WIDTH, SHREK_HEIGHT, 0.0);
 
 	let sprite_render = SpriteRender {
 		sprite_sheet: spritesheet_handle,

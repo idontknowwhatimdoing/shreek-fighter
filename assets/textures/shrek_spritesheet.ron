@@ -1,0 +1,90 @@
+List((
+    texture_width: 307,
+    texture_height: 230,
+    sprites: [
+		// idle right 1
+        (
+            x: 0,
+            y: 0,
+            width: 31,
+            height: 46,
+        ),
+		// idle right 2
+        (
+            x: 36,
+            y: 0,
+            width: 31,
+            height: 46,
+        ),
+		// idle right 3
+        (
+            x: 71,
+            y: 0,
+            width: 31,
+            height: 46,
+        ),
+		// idle right 4
+        (
+            x: 106,
+            y: 0,
+            width: 31,
+            height: 46,
+        ),
+		// idle right 5
+        (
+            x: 142,
+            y: 0,
+            width: 31,
+            height: 46,
+        ),
+		// walk right 1
+        (
+            x: 0,
+            y: 55,
+            width: 33,
+            height: 46,
+        ),
+		// walk right 2
+        (
+            x: 38,
+            y: 54,
+            width: 40,
+            height: 46,
+        ),
+		// walk right 3
+        (
+            x: 83,
+            y: 54,
+            width: 40,
+            height: 46,
+        ),
+		// walk right 4
+        (
+            x: 129,
+            y: 53,
+            width: 33,
+            height: 46,
+        ),
+		// walk right 5
+        (
+            x: 167,
+            y: 51,
+            width: 29,
+            height: 47,
+        ),
+		// walk right 6
+        (
+            x: 202,
+            y: 58,
+            width: 29,
+            height: 40,
+        ),
+		// walk right 7
+        (
+            x: 237,
+            y: 57,
+            width: 30,
+            height: 41,
+        ),
+    ],
+))

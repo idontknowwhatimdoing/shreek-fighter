@@ -8,18 +8,20 @@ use amethyst::renderer::{
 
 pub const ARENA_WIDTH: f32 = 583.33;
 pub const ARENA_HEIGHT: f32 = 350.0;
-pub const SHREK_WIDTH: f32 = 34.0;
-pub const SHREK_HEIGHT: f32 = 43.0;
-pub const GROUND_HEIGHT: f32 = 40.0;
+pub const SHREK_WIDTH: f32 = 33.0;
+// pub const SHREK_HEIGHT: f32 = 46.0;
+pub const GROUND_HEIGHT: f32 = 60.0;
 
 pub struct Game;
 
 impl SimpleState for Game {
 	fn on_start(&mut self, data: StateData<'_, GameData<'_, '_>>) {
 		let world = data.world;
-		world.register::<Moveable>();
 
 		init_camera(world);
+
+		let background_spritesheet = load_bg_spritesheet(world);
+		init_background(world, background_spritesheet);
 
 		let shrek_spritesheet = load_shrek_spritesheet(world);
 		init_shrek(world, shrek_spritesheet);
@@ -37,17 +39,34 @@ fn init_camera(world: &mut World) {
 		.build();
 }
 
-fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
+fn load_bg_spritesheet(world: &mut World) -> Handle<SpriteSheet> {
 	let loader = world.read_resource::<Loader>();
 	let texture_handle = loader.load(
-		"textures/shrek_walk_spritesheet.png",
+		"textures/forest_background_original.png",
 		ImageFormat::default(),
 		(),
 		&world.read_resource::<AssetStorage<Texture>>(),
 	);
 
 	loader.load(
-		"textures/shrek_walk_spritesheet.ron",
+		"textures/background.ron",
+		SpriteSheetFormat(texture_handle),
+		(),
+		&world.read_resource::<AssetStorage<SpriteSheet>>(),
+	)
+}
+
+fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
+	let loader = world.read_resource::<Loader>();
+	let texture_handle = loader.load(
+		"textures/shrek_spritesheet.png",
+		ImageFormat::default(),
+		(),
+		&world.read_resource::<AssetStorage<Texture>>(),
+	);
+
+	loader.load(
+		"textures/shrek_spritesheet.ron",
 		SpriteSheetFormat(texture_handle),
 		(),
 		&world.read_resource::<AssetStorage<SpriteSheet>>(),
@@ -56,7 +75,7 @@ fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
 
 fn init_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
 	let mut transform = Transform::default();
-	transform.set_translation_xyz(SHREK_WIDTH, SHREK_HEIGHT, 0.0);
+	transform.set_translation_xyz(0.0, GROUND_HEIGHT, 0.0);
 
 	let sprite_render = SpriteRender {
 		sprite_sheet: spritesheet_handle,
@@ -71,10 +90,26 @@ fn init_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
 		.build();
 }
 
+fn init_background(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
+	let mut transform = Transform::default();
+	transform.set_translation_xyz(130.0, ARENA_HEIGHT, -1.0);
+
+	let sprite_render = SpriteRender {
+		sprite_sheet: spritesheet_handle,
+		sprite_number: 0,
+	};
+
+	world
+		.create_entity()
+		.with(transform)
+		.with(sprite_render)
+		.build();
+}
+
 // ---[[ COMPONENTS ]]---
 
 #[derive(Default)]
-struct Moveable;
+pub struct Moveable;
 
 impl Component for Moveable {
 	type Storage = NullStorage<Self>;

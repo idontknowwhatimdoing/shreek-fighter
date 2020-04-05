@@ -1,0 +1,13 @@
+List((
+    texture_width: 924,
+    texture_height: 763,
+    sprites: [
+		// forest background
+        (
+            x: 0,
+            y: 0,
+            width: 924,
+            height: 763,
+        ),
+    ],
+))

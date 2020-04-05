@@ -10,7 +10,7 @@ pub const ARENA_WIDTH: f32 = 583.33;
 pub const ARENA_HEIGHT: f32 = 350.0;
 pub const SHREK_WIDTH: f32 = 34.0;
 pub const SHREK_HEIGHT: f32 = 43.0;
-// pub const GROUND_HEIGHT: f32 = 40.0;
+pub const GROUND_HEIGHT: f32 = 40.0;
 
 pub struct Game;
 

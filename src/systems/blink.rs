@@ -28,7 +28,7 @@ impl<'a> System<'a> for Blink {
 						if self.frame_count == 10 {
 							if sprite.sprite_number < 9 {
 								sprite.sprite_number += 1;
-							} else if sprite.sprite_number >= 9 {
+							} else if sprite.sprite_number == 9 {
 								sprite.sprite_number = 5;
 							}
 							self.frame_count = 0;
@@ -41,7 +41,7 @@ impl<'a> System<'a> for Blink {
 						if self.frame_count == 10 {
 							if sprite.sprite_number < 4 {
 								sprite.sprite_number += 1;
-							} else if sprite.sprite_number >= 4 {
+							} else if sprite.sprite_number == 4 {
 								sprite.sprite_number = 0;
 							}
 							self.frame_count = 0;

@@ -18,10 +18,10 @@ impl<'a> System<'a> for ChangeOrientation {
 		for (sprite, shrek) in (&mut sprite, &mut shrek).join() {
 			if shrek.orientation == Side::Left && input.key_is_down(VirtualKeyCode::Right) {
 				shrek.orientation = Side::Right;
-				sprite.sprite_number = 5;
+				sprite.sprite_number = 9;
 			} else if shrek.orientation == Side::Right && input.key_is_down(VirtualKeyCode::Left) {
 				shrek.orientation = Side::Left;
-				// sprite.sprite_number = 5;
+				sprite.sprite_number = 18;
 			}
 		}
 	}

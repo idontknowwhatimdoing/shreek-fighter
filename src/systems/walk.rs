@@ -23,31 +23,31 @@ impl<'a> System<'a> for Walk {
 					match shrek.orientation {
 						Side::Left => {
 							if key == VirtualKeyCode::Left {
-								// if sprite.sprite_number < 18 || sprite.sprite_number > 25 {
-								// 	sprite.sprite_number = 18;
-								// }
-								// self.frame_count += 1;
-								// if self.frame_count == 10 {
-								// 	if sprite.sprite_number < 25 {
-								// 		sprite.sprite_number += 1;
-								// 	} else if sprite.sprite_number == 25 {
-								// 		sprite.sprite_number = 18;
-								// 	}
-								// 	self.frame_count = 0;
-								// }
+								if sprite.sprite_number < 18 || sprite.sprite_number > 25 {
+									sprite.sprite_number = 18;
+								}
+								self.frame_count += 1;
+								if self.frame_count == 10 {
+									if sprite.sprite_number < 25 {
+										sprite.sprite_number += 1;
+									} else if sprite.sprite_number == 25 {
+										sprite.sprite_number = 18;
+									}
+									self.frame_count = 0;
+								}
 							}
 						}
 						Side::Right => {
 							if key == VirtualKeyCode::Right {
-								if sprite.sprite_number < 5 || sprite.sprite_number > 11 {
-									sprite.sprite_number = 5;
+								if sprite.sprite_number < 9 || sprite.sprite_number > 17 {
+									sprite.sprite_number = 9;
 								}
 								self.frame_count += 1;
 								if self.frame_count == 5 {
-									if sprite.sprite_number < 11 {
+									if sprite.sprite_number < 17 {
 										sprite.sprite_number += 1;
-									} else if sprite.sprite_number == 11 {
-										sprite.sprite_number = 5;
+									} else if sprite.sprite_number == 17 {
+										sprite.sprite_number = 9;
 									}
 									self.frame_count = 0;
 								}

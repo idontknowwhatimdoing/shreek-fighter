@@ -1,21 +1,7 @@
 # shreek-fighter
 
-## How to run
+Sprites ripped by A.J. Nitro
+From the game : Shrek: Hassle at the Castle
 
-To run the game, run the following command, which defaults to the `vulkan` graphics backend:
-
-```bash
-cargo run
-```
-
-Windows and Linux users may explicitly choose `"vulkan"` with the following command:
-
-```bash
-cargo run --no-default-features --features "vulkan"
-```
-
-Mac OS X users may explicitly choose `"metal"` with the following command:
-
-```bash
-cargo run --no-default-features --features "metal"
-```
+Background by edermunizz
+https://edermunizz.itch.io/free-pixel-art-forest

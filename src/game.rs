@@ -1,6 +1,6 @@
 use amethyst::assets::{AssetStorage, Handle, Loader};
 use amethyst::core::transform::Transform;
-use amethyst::ecs::prelude::{Component, NullStorage};
+use amethyst::ecs::prelude::{Component, VecStorage};
 use amethyst::prelude::*;
 use amethyst::renderer::{
 	formats::texture::ImageFormat, Camera, SpriteRender, SpriteSheet, SpriteSheetFormat, Texture,
@@ -85,7 +85,7 @@ fn init_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
 	world
 		.create_entity()
 		.with(transform)
-		.with(Moveable)
+		.with(Shrek::new(Side::Right))
 		.with(sprite_render)
 		.build();
 }
@@ -108,9 +108,21 @@ fn init_background(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
 
 // ---[[ COMPONENTS ]]---
 
-#[derive(Default)]
-pub struct Moveable;
+pub enum Side {
+	Left,
+	Right,
+}
 
-impl Component for Moveable {
-	type Storage = NullStorage<Self>;
+pub struct Shrek {
+	pub orientation: Side,
+}
+
+impl Shrek {
+	fn new(orientation: Side) -> Self {
+		Shrek { orientation }
+	}
+}
+
+impl Component for Shrek {
+	type Storage = VecStorage<Self>;
 }

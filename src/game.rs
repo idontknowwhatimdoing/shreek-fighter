@@ -108,6 +108,7 @@ fn init_background(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
 
 // ---[[ COMPONENTS ]]---
 
+#[derive(PartialEq)]
 pub enum Side {
 	Left,
 	Right,

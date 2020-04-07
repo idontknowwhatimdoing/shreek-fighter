@@ -30,16 +30,13 @@ fn main() -> amethyst::Result<()> {
 	let game_data = GameDataBuilder::default()
 		.with_bundle(
 			RenderingBundle::<DefaultBackend>::new()
-				.with_plugin(
-					RenderToWindow::from_config_path(display_config_path)?
-						.with_clear([0.0, 0.0, 0.0, 1.0]),
-				)
+				.with_plugin(RenderToWindow::from_config_path(display_config_path)?)
 				.with_plugin(RenderFlat2D::default()),
 		)?
 		.with_bundle(TransformBundle::new())?
 		.with_bundle(input_bundle)?
 		.with(systems::PlayerMove, "player_move", &["input_system"])
-		.with(systems::Blink::default(), "blink", &["input_system"])
+		.with(systems::Idle::default(), "blink", &["input_system"])
 		.with(systems::Walk::default(), "walk", &["input_system"])
 		.with(
 			systems::ChangeOrientation,

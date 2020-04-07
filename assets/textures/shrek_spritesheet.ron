@@ -2,92 +2,176 @@
 // From the game : Shrek: Reekin' Havoc
 
 List((
-    texture_width: 307,
-    texture_height: 230,
+    texture_width: 514,
+    texture_height: 138,
     sprites: [
-		// idle right 1
+		// idle right 0 (0)
         (
             x: 0,
             y: 0,
             width: 31,
-            height: 46,
+            height: 47,
         ),
-		// idle right 2
+		// idle right 1 (1)
         (
-            x: 36,
+            x: 33,
             y: 0,
             width: 31,
-            height: 46,
+            height: 47,
         ),
-		// idle right 3
+		// idle right 2 (2)
         (
-            x: 71,
+            x: 68,
             y: 0,
             width: 31,
-            height: 46,
+            height: 47,
         ),
-		// idle right 4
+		// idle right 3 (3)
         (
-            x: 106,
+            x: 103,
             y: 0,
             width: 31,
-            height: 46,
+            height: 47,
         ),
-		// idle right 5
+		// idle right 4 (4)
         (
-            x: 142,
+            x: 139,
             y: 0,
             width: 31,
-            height: 46,
+            height: 47,
         ),
-		// walk right 1
+		// idle left 0 (5)
+        (
+            x: 482,
+            y: 0,
+            width: 31,
+            height: 47,
+        ),
+		// idle left 1 (6)
+        (
+            x: 449,
+            y: 0,
+            width: 31,
+            height: 47,
+        ),
+		// idle left 2 (7)
+        (
+            x: 414,
+            y: 0,
+            width: 31,
+            height: 47,
+        ),
+		// idle left 1 (8)
+        (
+            x: 378,
+            y: 0,
+            width: 31,
+            height: 47,
+        ),
+		// idle left 4 (9)
+        (
+            x: 343,
+            y: 0,
+            width: 31,
+            height: 47,
+        ),
+		// walk right 0 (10)
         (
             x: 0,
-            y: 55,
-            width: 33,
-            height: 46,
-        ),
-		// walk right 2
-        (
-            x: 38,
-            y: 54,
-            width: 40,
-            height: 46,
-        ),
-		// walk right 3
-        (
-            x: 83,
-            y: 54,
-            width: 40,
-            height: 46,
-        ),
-		// walk right 4
-        (
-            x: 129,
-            y: 53,
-            width: 33,
-            height: 46,
-        ),
-		// walk right 5
-        (
-            x: 167,
             y: 51,
+            width: 33,
+            height: 43,
+        ),
+		// walk right 1 (11)
+        (
+            x: 37,
+            y: 50,
+            width: 39,
+            height: 45,
+        ),
+		// walk right 2 (12)
+        (
+            x: 82,
+            y: 50,
+            width: 39,
+            height: 44,
+        ),
+		// walk right 3 (13)
+        (
+            x: 128,
+            y: 49,
+            width: 32,
+            height: 45,
+        ),
+		// walk right 4 (14)
+        (
+            x: 166,
+            y: 47,
             width: 29,
             height: 47,
         ),
-		// walk right 6
+		// walk right 5 (15)
         (
-            x: 202,
-            y: 58,
+            x: 196,
+            y: 54,
             width: 29,
-            height: 40,
-        ),
-		// walk right 7
-        (
-            x: 237,
-            y: 57,
-            width: 30,
             height: 41,
+        ),
+		// walk right 6 (16)
+        (
+            x: 226,
+            y: 53,
+            width: 30,
+            height: 42,
+        ),
+		// walk left 0 (17)
+        (
+            x: 480,
+            y: 51,
+            width: 33,
+            height: 43,
+        ),
+		// walk left 1 (18)
+        (
+            x: 437,
+            y: 50,
+            width: 39,
+            height: 45,
+        ),
+		// walk left 2 (19)
+        (
+            x: 392,
+            y: 50,
+            width: 39,
+            height: 44,
+        ),
+		// walk left 3 (20)
+        (
+            x: 353,
+            y: 49,
+            width: 32,
+            height: 45,
+        ),
+		// walk left 4 (21)
+        (
+            x: 318,
+            y: 47,
+            width: 29,
+            height: 47,
+        ),
+		// walk left 5 (22)
+        (
+            x: 288,
+            y: 54,
+            width: 29,
+            height: 41,
+        ),
+		// walk left 6 (23)
+        (
+            x: 257,
+            y: 53,
+            width: 30,
+            height: 42,
         ),
     ],
 ))

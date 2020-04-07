@@ -23,15 +23,15 @@ impl<'a> System<'a> for Walk {
 					match shrek.orientation {
 						Side::Left => {
 							if key == VirtualKeyCode::Left {
-								if sprite.sprite_number < 18 || sprite.sprite_number > 25 {
-									sprite.sprite_number = 18;
+								if sprite.sprite_number < 17 || sprite.sprite_number > 23 {
+									sprite.sprite_number = 17;
 								}
 								self.frame_count += 1;
-								if self.frame_count == 10 {
-									if sprite.sprite_number < 25 {
+								if self.frame_count == 5 {
+									if sprite.sprite_number < 23 {
 										sprite.sprite_number += 1;
-									} else if sprite.sprite_number == 25 {
-										sprite.sprite_number = 18;
+									} else if sprite.sprite_number == 23 {
+										sprite.sprite_number = 17;
 									}
 									self.frame_count = 0;
 								}
@@ -39,15 +39,15 @@ impl<'a> System<'a> for Walk {
 						}
 						Side::Right => {
 							if key == VirtualKeyCode::Right {
-								if sprite.sprite_number < 9 || sprite.sprite_number > 17 {
-									sprite.sprite_number = 9;
+								if sprite.sprite_number < 10 || sprite.sprite_number > 16 {
+									sprite.sprite_number = 10;
 								}
 								self.frame_count += 1;
 								if self.frame_count == 5 {
-									if sprite.sprite_number < 17 {
+									if sprite.sprite_number < 16 {
 										sprite.sprite_number += 1;
-									} else if sprite.sprite_number == 17 {
-										sprite.sprite_number = 9;
+									} else if sprite.sprite_number == 16 {
+										sprite.sprite_number = 10;
 									}
 									self.frame_count = 0;
 								}

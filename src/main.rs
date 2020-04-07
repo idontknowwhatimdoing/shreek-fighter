@@ -36,13 +36,14 @@ fn main() -> amethyst::Result<()> {
 		.with_bundle(TransformBundle::new())?
 		.with_bundle(input_bundle)?
 		.with(systems::PlayerMove, "player_move", &["input_system"])
-		.with(systems::Idle::default(), "blink", &["input_system"])
-		.with(systems::Walk::default(), "walk", &["input_system"])
+		.with(systems::PlayerIdle::default(), "blink", &["input_system"])
+		.with(systems::PlayerWalk::default(), "walk", &["input_system"])
 		.with(
 			systems::ChangeOrientation,
 			"change_orientation",
 			&["input_system"],
-		);
+		)
+		.with(systems::PlayerPunch, "player_punch", &["input_system"]);
 
 	let mut game = Application::new(assets_dir, game::Game, game_data)?;
 	game.run();

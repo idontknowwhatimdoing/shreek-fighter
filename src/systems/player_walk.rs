@@ -5,11 +5,11 @@ use amethyst::input::{InputHandler, StringBindings, VirtualKeyCode};
 use amethyst::renderer::SpriteRender;
 
 #[derive(SystemDesc, Default)]
-pub struct Walk {
+pub struct PlayerWalk {
 	frame_count: u8,
 }
 
-impl<'a> System<'a> for Walk {
+impl<'a> System<'a> for PlayerWalk {
 	type SystemData = (
 		WriteStorage<'a, SpriteRender>,
 		ReadStorage<'a, Shrek>,

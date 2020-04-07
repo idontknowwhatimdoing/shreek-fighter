@@ -173,5 +173,61 @@ List((
             width: 30,
             height: 42,
         ),
+		// left punch right 0 (24)
+        (
+            x: 0,
+            y: 98,
+            width: 33,
+            height: 39,
+        ),
+		// left punch right 1 (25)
+        (
+            x: 37,
+            y: 95,
+            width: 48,
+            height: 42,
+        ),
+		// right punch right 0 (26)
+        (
+            x: 90,
+            y: 95,
+            width: 31,
+            height: 42,
+        ),
+		// right punch right 1 (27)
+        (
+            x: 127,
+            y: 95,
+            width: 45,
+            height: 42,
+        ),
+		// right punch left 0 (28)
+        (
+            x: 480,
+            y: 98,
+            width: 33,
+            height: 39,
+        ),
+		// right punch left 1 (29)
+        (
+            x: 429,
+            y: 95,
+            width: 48,
+            height: 42,
+        ),
+		// left punch left 0 (30)
+        (
+            x: 392,
+            y: 95,
+            width: 31,
+            height: 42,
+        ),
+		// left punch left 1 (31)
+        (
+            x: 341,
+            y: 95,
+            width: 45,
+            height: 42,
+        ),
     ],
 ))

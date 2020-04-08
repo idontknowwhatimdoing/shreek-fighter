@@ -173,21 +173,21 @@ List((
             width: 30,
             height: 42,
         ),
-		// left punch right 0 (24)
+		// left punch right 0 (24) not used
         (
             x: 0,
             y: 98,
             width: 33,
             height: 39,
         ),
-		// left punch right 1 (25)
+		// left punch right 1 (25) not used
         (
             x: 37,
             y: 95,
             width: 48,
             height: 42,
         ),
-		// right punch right 0 (26)
+		// right punch right 0 (26) not used
         (
             x: 90,
             y: 95,
@@ -201,21 +201,21 @@ List((
             width: 45,
             height: 42,
         ),
-		// right punch left 0 (28)
+		// right punch left 0 (28) not used
         (
             x: 480,
             y: 98,
             width: 33,
             height: 39,
         ),
-		// right punch left 1 (29)
+		// right punch left 1 (29) not used
         (
             x: 429,
             y: 95,
             width: 48,
             height: 42,
         ),
-		// left punch left 0 (30)
+		// left punch left 0 (30) not used
         (
             x: 392,
             y: 95,

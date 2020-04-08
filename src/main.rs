@@ -43,7 +43,12 @@ fn main() -> amethyst::Result<()> {
 			"change_orientation",
 			&["input_system"],
 		)
-		.with(systems::PlayerPunch, "player_punch", &["input_system"]);
+		.with(systems::PlayerPunch, "player_punch", &["input_system"])
+		.with(
+			systems::PlayerJump::default(),
+			"player_jump",
+			&["input_system"],
+		);
 
 	let mut game = Application::new(assets_dir, game::Game, game_data)?;
 	game.run();

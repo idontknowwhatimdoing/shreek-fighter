@@ -17,39 +17,41 @@ impl<'a> System<'a> for PlayerWalk {
 	);
 
 	fn run(&mut self, (mut sprite, shrek, input): Self::SystemData) {
-		for key in input.keys_that_are_down() {
-			if key == VirtualKeyCode::Left || key == VirtualKeyCode::Right {
-				for (sprite, shrek) in (&mut sprite, &shrek).join() {
-					match shrek.orientation {
-						Side::Left => {
-							if key == VirtualKeyCode::Left {
-								if sprite.sprite_number < 17 || sprite.sprite_number > 23 {
-									sprite.sprite_number = 17;
-								}
-								self.frame_count += 1;
-								if self.frame_count == 5 {
-									if sprite.sprite_number < 23 {
-										sprite.sprite_number += 1;
-									} else if sprite.sprite_number == 23 {
+		if !input.key_is_down(VirtualKeyCode::Up) {
+			for key in input.keys_that_are_down() {
+				if key == VirtualKeyCode::Left || key == VirtualKeyCode::Right {
+					for (sprite, shrek) in (&mut sprite, &shrek).join() {
+						match shrek.orientation {
+							Side::Left => {
+								if key == VirtualKeyCode::Left {
+									if sprite.sprite_number < 17 || sprite.sprite_number > 23 {
 										sprite.sprite_number = 17;
 									}
-									self.frame_count = 0;
+									self.frame_count += 1;
+									if self.frame_count == 4 {
+										if sprite.sprite_number < 23 {
+											sprite.sprite_number += 1;
+										} else if sprite.sprite_number == 23 {
+											sprite.sprite_number = 17;
+										}
+										self.frame_count = 0;
+									}
 								}
 							}
-						}
-						Side::Right => {
-							if key == VirtualKeyCode::Right {
-								if sprite.sprite_number < 10 || sprite.sprite_number > 16 {
-									sprite.sprite_number = 10;
-								}
-								self.frame_count += 1;
-								if self.frame_count == 5 {
-									if sprite.sprite_number < 16 {
-										sprite.sprite_number += 1;
-									} else if sprite.sprite_number == 16 {
+							Side::Right => {
+								if key == VirtualKeyCode::Right {
+									if sprite.sprite_number < 10 || sprite.sprite_number > 16 {
 										sprite.sprite_number = 10;
 									}
-									self.frame_count = 0;
+									self.frame_count += 1;
+									if self.frame_count == 4 {
+										if sprite.sprite_number < 16 {
+											sprite.sprite_number += 1;
+										} else if sprite.sprite_number == 16 {
+											sprite.sprite_number = 10;
+										}
+										self.frame_count = 0;
+									}
 								}
 							}
 						}

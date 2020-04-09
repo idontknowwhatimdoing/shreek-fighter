@@ -48,7 +48,8 @@ fn main() -> amethyst::Result<()> {
 			systems::PlayerJump::default(),
 			"player_jump",
 			&["input_system"],
-		);
+		)
+		.with(systems::EnemyMove, "enemy_move", &["input_system"]);
 
 	let mut game = Application::new(assets_dir, game::Game, game_data)?;
 	game.run();

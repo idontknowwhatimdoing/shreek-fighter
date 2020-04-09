@@ -10,6 +10,8 @@ pub const ARENA_WIDTH: f32 = 583.33;
 pub const ARENA_HEIGHT: f32 = 350.0;
 pub const SHREK_WIDTH: f32 = 33.0;
 // pub const SHREK_HEIGHT: f32 = 46.0;
+pub const GUARD_WIDTH: f32 = 24.0;
+// pub const GUARD_HEIGHT: f32 = 46.0;
 pub const GROUND_HEIGHT: f32 = 60.0;
 pub const JUMP_HEIGHT: f32 = 250.0;
 
@@ -26,16 +28,19 @@ impl SimpleState for Game {
 
 		let shrek_spritesheet = load_shrek_spritesheet(world);
 		init_shrek(world, shrek_spritesheet);
+
+		let guard_spritesheet = load_guard_spritesheet(world);
+		init_guard(world, guard_spritesheet);
 	}
 }
 
 fn init_camera(world: &mut World) {
-	let mut transform = Transform::default();
-	transform.set_translation_xyz(ARENA_WIDTH / 2.0, ARENA_HEIGHT / 2.0, 1.0);
+	let mut pos = Transform::default();
+	pos.set_translation_xyz(ARENA_WIDTH / 2.0, ARENA_HEIGHT / 2.0, 1.0);
 
 	world
 		.create_entity()
-		.with(transform)
+		.with(pos)
 		.with(Camera::standard_2d(ARENA_WIDTH, ARENA_HEIGHT))
 		.build();
 }
@@ -74,9 +79,26 @@ fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
 	)
 }
 
+fn load_guard_spritesheet(world: &World) -> Handle<SpriteSheet> {
+	let loader = world.read_resource::<Loader>();
+	let texture_handle = loader.load(
+		"textures/guard_spritesheet.png",
+		ImageFormat::default(),
+		(),
+		&world.read_resource::<AssetStorage<Texture>>(),
+	);
+
+	loader.load(
+		"textures/guard_spritesheet.ron",
+		SpriteSheetFormat(texture_handle),
+		(),
+		&world.read_resource::<AssetStorage<SpriteSheet>>(),
+	)
+}
+
 fn init_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
-	let mut transform = Transform::default();
-	transform.set_translation_xyz(0.0, GROUND_HEIGHT, 0.0);
+	let mut pos = Transform::default();
+	pos.set_translation_xyz(0.0, GROUND_HEIGHT, 0.0);
 
 	let sprite_render = SpriteRender {
 		sprite_sheet: spritesheet_handle,
@@ -85,24 +107,37 @@ fn init_shrek(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
 
 	world
 		.create_entity()
-		.with(transform)
+		.with(pos)
 		.with(Shrek::new(Side::Right))
 		.with(sprite_render)
 		.build();
 }
 
 fn init_background(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
-	let mut transform = Transform::default();
-	transform.set_translation_xyz(130.0, ARENA_HEIGHT, -1.0);
+	let mut pos = Transform::default();
+	pos.set_translation_xyz(130.0, ARENA_HEIGHT, -1.0);
 
 	let sprite_render = SpriteRender {
 		sprite_sheet: spritesheet_handle,
 		sprite_number: 0,
 	};
 
+	world.create_entity().with(pos).with(sprite_render).build();
+}
+
+fn init_guard(world: &mut World, spritesheet_handle: Handle<SpriteSheet>) {
+	let mut pos = Transform::default();
+	pos.set_translation_xyz(ARENA_WIDTH - GUARD_WIDTH / 2.0, GROUND_HEIGHT, 0.0);
+
+	let sprite_render = SpriteRender {
+		sprite_sheet: spritesheet_handle,
+		sprite_number: 6,
+	};
+
 	world
 		.create_entity()
-		.with(transform)
+		.with(pos)
+		.with(Guard::new(Side::Left))
 		.with(sprite_render)
 		.build();
 }
@@ -126,5 +161,19 @@ impl Shrek {
 }
 
 impl Component for Shrek {
+	type Storage = VecStorage<Self>;
+}
+
+pub struct Guard {
+	pub orientation: Side,
+}
+
+impl Guard {
+	fn new(orientation: Side) -> Self {
+		Guard { orientation }
+	}
+}
+
+impl Component for Guard {
 	type Storage = VecStorage<Self>;
 }

@@ -1,6 +1,7 @@
 (
   axes: {
     "shrek": Emulated(pos: Key(Right), neg: Key(Left)),
+    "guard": Emulated(pos: Key(M), neg: Key(K)),
   },
   actions: {},
 )

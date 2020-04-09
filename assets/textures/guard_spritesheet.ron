@@ -1,0 +1,275 @@
+// Sprites ripped by A.J. Nitro
+// From the game : Shrek: Hassle at the Castle
+
+List((
+    texture_width: 682,
+    texture_height: 118,
+    sprites: [
+		// walk axe down right 0 (0)
+        (
+            x: 0,
+            y: 2,
+            width: 24,
+            height: 37,
+        ),
+		// walk axe down right 1 (1)
+        (
+            x: 30,
+            y: 1,
+            width: 26,
+            height: 37,
+        ),
+		// walk axe down right 2 (2)
+        (
+            x: 62,
+            y: 2,
+            width: 24,
+            height: 37,
+        ),
+		// walk axe down right 3 (3)
+        (
+            x: 92,
+            y: 1,
+            width: 24,
+            height: 37,
+        ),
+		// walk axe down right 4 (4)
+        (
+            x: 122,
+            y: 0,
+            width: 27,
+            height: 38,
+        ),
+		// walk axe down right 5 (5)
+        (
+            x: 151,
+            y: 2,
+            width: 25,
+            height: 37,
+        ),
+		//  walk axe down left 0 (6)
+        (
+            x: 657,
+            y: 2,
+            width: 24,
+            height: 37,
+        ),
+		//  walk axe down left 1 (7)
+        (
+            x: 625,
+            y: 1,
+            width: 26,
+            height: 37,
+        ),
+		//  walk axe down left 2 (8)
+        (
+            x: 595,
+            y: 2,
+            width: 24,
+            height: 37,
+        ),
+		//  walk axe down left 3 (9)
+        (
+            x: 565,
+            y: 1,
+            width: 24,
+            height: 37,
+        ),
+		//  walk axe down left 4 (10)
+        (
+            x: 532,
+            y: 0,
+            width: 27,
+            height: 38,
+        ),
+		//  walk axe down left 5 (11)
+        (
+            x: 505,
+            y: 2,
+            width: 25,
+            height: 37,
+        ),
+		//  walk axe up right 0 (12)
+        (
+            x: 0,
+            y: 41,
+            width: 31,
+            height: 37,
+        ),
+		//  walk axe up right 1 (13)
+        (
+            x: 37,
+            y: 39,
+            width: 32,
+            height: 38,
+        ),
+		//  walk axe up right 2 (14)
+        (
+            x: 75,
+            y: 41,
+            width: 25,
+            height: 37,
+        ),
+		//  walk axe up right 3 (15)
+        (
+            x: 113,
+            y: 40,
+            width: 31,
+            height: 37,
+        ),
+		//  walk axe up left 0 (16)
+        (
+            x: 650,
+            y: 41,
+            width: 31,
+            height: 37,
+        ),
+		//  walk axe up left 1 (17)
+        (
+            x: 612,
+            y: 39,
+            width: 32,
+            height: 38,
+        ),
+		//  walk axe up left 2 (18)
+        (
+            x: 574,
+            y: 41,
+            width: 25,
+            height: 37,
+        ),
+		//  walk axe up left 3 (19)
+        (
+            x: 537,
+            y: 40,
+            width: 31,
+            height: 37,
+        ),
+		//  attack right 0 (20)
+        (
+            x: 0,
+            y: 81,
+            width: 31,
+            height: 36,
+        ),
+		//  attack right 1 (21)
+        (
+            x: 37,
+            y: 81,
+            width: 31,
+            height: 37,
+        ),
+		//  attack right 2 (22)
+        (
+            x: 74,
+            y: 78,
+            width: 33,
+            height: 40,
+        ),
+		//  attack right 3 (23)
+        (
+            x: 113,
+            y: 80,
+            width: 37,
+            height: 38,
+        ),
+		//  attack right 4 (23)
+        (
+            x: 152,
+            y: 80,
+            width: 39,
+            height: 38,
+        ),
+		//  attack right 5 (25)
+        (
+            x: 192,
+            y: 80,
+            width: 42,
+            height: 38,
+        ),
+		//  attack right 6 (26)
+        (
+            x: 235,
+            y: 79,
+            width: 40,
+            height: 37,
+        ),
+		//  attack right 7 (27)
+        (
+            x: 276,
+            y: 79,
+            width: 39,
+            height: 37,
+        ),
+		//  attack right 8 (28)
+        (
+            x: 316,
+            y: 80,
+            width: 24,
+            height: 38,
+        ),
+		//  attack left 0 (29)
+        (
+            x: 650,
+            y: 81,
+            width: 31,
+            height: 36,
+        ),
+		//  attack left 1 (30)
+        (
+            x: 613,
+            y: 81,
+            width: 31,
+            height: 37,
+        ),
+		//  attack left 2 (31)
+        (
+            x: 574,
+            y: 78,
+            width: 33,
+            height: 40,
+        ),
+		//  attack left 3 (32)
+        (
+            x: 531,
+            y: 80,
+            width: 37,
+            height: 38,
+        ),
+		//  attack left 4 (33)
+        (
+            x: 490,
+            y: 80,
+            width: 39,
+            height: 38,
+        ),
+		//  attack left 5 (34)
+        (
+            x: 447,
+            y: 80,
+            width: 42,
+            height: 38,
+        ),
+		//  attack left 6 (35)
+        (
+            x: 406,
+            y: 79,
+            width: 40,
+            height: 37,
+        ),
+		//  attack left 7 (36)
+        (
+            x: 366,
+            y: 79,
+            width: 39,
+            height: 37,
+        ),
+		//  attack left 8 (37)
+        (
+            x: 341,
+            y: 80,
+            width: 24,
+            height: 38,
+        ),
+    ],
+))

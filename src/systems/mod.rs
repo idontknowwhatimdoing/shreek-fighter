@@ -1,13 +1,11 @@
+mod attack;
 mod change_orientation;
-mod enemy_move;
-mod player_idle;
-mod player_jump;
+mod idle;
+mod jump;
 mod player_move;
-mod player_punch;
-mod player_walk;
+mod walk;
 
 pub use self::{
-	change_orientation::ChangeOrientation, enemy_move::EnemyMove, player_idle::PlayerIdle,
-	player_jump::PlayerJump, player_move::PlayerMove, player_punch::PlayerPunch,
-	player_walk::PlayerWalk,
+	attack::Attack, change_orientation::ChangeOrientation, idle::Idle, jump::Jump,
+	player_move::Move, walk::Walk,
 };

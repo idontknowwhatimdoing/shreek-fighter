@@ -1,7 +1,10 @@
 (
   axes: {
-    "shrek": Emulated(pos: Key(Right), neg: Key(Left)),
-    "guard": Emulated(pos: Key(M), neg: Key(K)),
+	"player": Emulated(pos: Key(Right), neg: Key(Left)),
+  "guard": Emulated(pos: Key(D), neg: Key(Q)),
   },
-  actions: {},
+  actions: {
+    "shrek_jump": [[Key(Up)]],
+    "guard_jump": [[Key(Z)]],
+  },
 )

@@ -1,15 +1,15 @@
-use crate::game::{Player, Side};
+use crate::game::{Orientation, Player};
 use amethyst::derive::SystemDesc;
 use amethyst::ecs::{Join, Read, ReadStorage, System, SystemData, WriteStorage};
 use amethyst::input::{InputHandler, StringBindings, VirtualKeyCode};
 use amethyst::renderer::SpriteRender;
 
 #[derive(SystemDesc, Default)]
-pub struct Idle {
+pub struct ShrekIdle {
 	frame_count: u8,
 }
 
-impl<'a> System<'a> for Idle {
+impl<'a> System<'a> for ShrekIdle {
 	type SystemData = (
 		WriteStorage<'a, SpriteRender>,
 		ReadStorage<'a, Player>,
@@ -21,7 +21,7 @@ impl<'a> System<'a> for Idle {
 			self.frame_count += 1;
 			for (sprite, player) in (&mut sprite, &player).join() {
 				match player.orientation {
-					Side::Left => {
+					Orientation::Left => {
 						if sprite.sprite_number < 5 || sprite.sprite_number > 9 {
 							sprite.sprite_number = 5;
 						}
@@ -34,7 +34,7 @@ impl<'a> System<'a> for Idle {
 							self.frame_count = 0;
 						}
 					}
-					Side::Right => {
+					Orientation::Right => {
 						if sprite.sprite_number > 4 {
 							sprite.sprite_number = 0;
 						}

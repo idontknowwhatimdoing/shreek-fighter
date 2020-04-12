@@ -1,11 +1,16 @@
-mod attack;
-mod change_orientation;
-mod idle;
-mod jump;
-mod player_move;
-mod walk;
+mod change_guard_orientation;
+mod change_shrek_orientation;
+mod guard_move;
+mod guard_walk;
+mod shrek_idle;
+mod shrek_jump;
+mod shrek_move;
+mod shrek_punch;
+mod shrek_walk;
 
 pub use self::{
-	attack::Attack, change_orientation::ChangeOrientation, idle::Idle, jump::Jump,
-	player_move::Move, walk::Walk,
+	change_guard_orientation::ChangeGuardOrientation,
+	change_shrek_orientation::ChangeShrekOrientation, guard_move::GuardMove, guard_walk::GuardWalk,
+	shrek_idle::ShrekIdle, shrek_jump::ShrekJump, shrek_move::ShrekMove, shrek_punch::ShrekPunch,
+	shrek_walk::ShrekWalk,
 };

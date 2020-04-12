@@ -35,16 +35,39 @@ fn main() -> amethyst::Result<()> {
 		)?
 		.with_bundle(TransformBundle::new())?
 		.with_bundle(input_bundle)?
-		.with(systems::Move, "player_move", &["input_system"])
-		.with(systems::Idle::default(), "blink", &["input_system"])
-		.with(systems::Walk::default(), "walk", &["input_system"])
+		.with(systems::ShrekMove, "shrek_move", &["input_system"])
 		.with(
-			systems::ChangeOrientation,
-			"change_orientation",
+			systems::ShrekIdle::default(),
+			"shrek_idle",
 			&["input_system"],
 		)
-		.with(systems::Attack, "punch", &["input_system"])
-		.with(systems::Jump::default(), "jump", &["input_system"]);
+		.with(
+			systems::ShrekWalk::default(),
+			"shrek_walk",
+			&["input_system"],
+		)
+		.with(
+			systems::ChangeShrekOrientation,
+			"change_shrek_orientation",
+			&["input_system"],
+		)
+		.with(systems::ShrekPunch, "shrek_punch", &["input_system"])
+		.with(
+			systems::ShrekJump::default(),
+			"shrek_jump",
+			&["input_system"],
+		)
+		.with(systems::GuardMove, "guard_move", &["input_system"])
+		.with(
+			systems::ChangeGuardOrientation,
+			"change_guard_orientation",
+			&["input_system"],
+		)
+		.with(
+			systems::GuardWalk::default(),
+			"guard_walk",
+			&["input_system"],
+		);
 
 	let mut game = Application::new(assets_dir, game::Game, game_data)?;
 	game.run();

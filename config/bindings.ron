@@ -7,5 +7,6 @@
 		"shrek_jump": [[Key(Up)]],
 		"shrek_punch": [[Key(A)]],
 		"guard_jump": [[Key(Z)]],
+		"guard_attack": [[Key(E)]],
   	},
 )

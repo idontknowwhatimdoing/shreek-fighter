@@ -1,4 +1,5 @@
-use crate::game::{Guard, Orientation, Player};
+use crate::game::{Guard, Orientation, Player, GROUND_HEIGHT};
+use amethyst::core::transform::Transform;
 use amethyst::derive::SystemDesc;
 use amethyst::ecs::{Join, Read, ReadStorage, System, SystemData, WriteStorage};
 use amethyst::input::{InputHandler, StringBindings};
@@ -14,44 +15,43 @@ impl<'a> System<'a> for GuardWalk {
 		WriteStorage<'a, SpriteRender>,
 		ReadStorage<'a, Player>,
 		ReadStorage<'a, Guard>,
+		ReadStorage<'a, Transform>,
 		Read<'a, InputHandler<StringBindings>>,
 	);
 
-	fn run(&mut self, (mut sprite, player, guard, input): Self::SystemData) {
-		if !input.action_is_down("guard_jump").unwrap() {
-			if let Some(mvt) = input.axis_value("guard") {
-				for (sprite, player, _guard) in (&mut sprite, &player, &guard).join() {
-					match player.orientation {
-						Orientation::Left => {
-							if mvt < 0.0 {
-								if sprite.sprite_number < 17 || sprite.sprite_number > 23 {
-									sprite.sprite_number = 17;
+	fn run(&mut self, (mut sprite, player, guard, pos, input): Self::SystemData) {
+		for (sprite, player, _guard, pos) in (&mut sprite, &player, &guard, &pos).join() {
+			if pos.translation().y == GROUND_HEIGHT {
+				match player.orientation {
+					Orientation::Left => {
+						if input.axis_value("guard").unwrap() < 0.0 {
+							if sprite.sprite_number < 6 || sprite.sprite_number > 11 {
+								sprite.sprite_number = 6;
+							}
+							self.frame_count += 1;
+							if self.frame_count == 6 {
+								if sprite.sprite_number < 11 {
+									sprite.sprite_number += 1;
+								} else if sprite.sprite_number == 11 {
+									sprite.sprite_number = 6;
 								}
-								self.frame_count += 1;
-								if self.frame_count == 4 {
-									if sprite.sprite_number < 23 {
-										sprite.sprite_number += 1;
-									} else if sprite.sprite_number == 23 {
-										sprite.sprite_number = 17;
-									}
-									self.frame_count = 0;
-								}
+								self.frame_count = 0;
 							}
 						}
-						Orientation::Right => {
-							if mvt > 0.0 {
-								if sprite.sprite_number < 10 || sprite.sprite_number > 16 {
-									sprite.sprite_number = 10;
+					}
+					Orientation::Right => {
+						if input.axis_value("guard").unwrap() > 0.0 {
+							if sprite.sprite_number > 5 {
+								sprite.sprite_number = 0;
+							}
+							self.frame_count += 1;
+							if self.frame_count == 6 {
+								if sprite.sprite_number < 5 {
+									sprite.sprite_number += 1;
+								} else if sprite.sprite_number == 5 {
+									sprite.sprite_number = 0;
 								}
-								self.frame_count += 1;
-								if self.frame_count == 4 {
-									if sprite.sprite_number < 16 {
-										sprite.sprite_number += 1;
-									} else if sprite.sprite_number == 16 {
-										sprite.sprite_number = 10;
-									}
-									self.frame_count = 0;
-								}
+								self.frame_count = 0;
 							}
 						}
 					}

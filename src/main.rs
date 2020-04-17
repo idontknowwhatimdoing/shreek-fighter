@@ -51,7 +51,11 @@ fn main() -> amethyst::Result<()> {
 			"change_shrek_orientation",
 			&["input_system"],
 		)
-		.with(systems::ShrekPunch, "shrek_punch", &["input_system"])
+		.with(
+			systems::ShrekPunch::default(),
+			"shrek_punch",
+			&["input_system"],
+		)
 		.with(
 			systems::ShrekJump::default(),
 			"shrek_jump",

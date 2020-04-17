@@ -20,10 +20,10 @@ impl<'a> System<'a> for GuardAttack {
 			for (sprite, player, _guard) in (&mut sprite, &player, &guard).join() {
 				match player.orientation {
 					Orientation::Left => {
-						sprite.sprite_number = 31;
+						sprite.sprite_number = 34;
 					}
 					Orientation::Right => {
-						sprite.sprite_number = 27;
+						sprite.sprite_number = 25;
 					}
 				}
 			}

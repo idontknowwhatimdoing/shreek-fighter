@@ -76,6 +76,16 @@ fn main() -> amethyst::Result<()> {
 			systems::GuardJump::default(),
 			"guard_jump",
 			&["input_system"],
+		)
+		.with(
+			systems::GuardPunch::default(),
+			"guard_punch",
+			&["input_system"],
+		)
+		.with(
+			systems::GuardIdle::default(),
+			"guard_idle",
+			&["input_system"],
 		);
 
 	let mut game = Application::new(assets_dir, game::Game, game_data)?;

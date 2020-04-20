@@ -1,10 +1,10 @@
 # shreek-fighter
 
-Player sprites ripped by A.J. Nitro
-From the game : Player: Reekin' Havoc
+Shrek sprites ripped by A.J. Nitro
+From the game : Shrek: Reekin' Havoc
 
-Guards sprites ripped by A.J. Nitro
-From the game : Player: Hassle at the Castle
+"Thelonious" sprites ripped by A.J. Nitro
+From the game : Shrek: Hassle at the Castle
 
 Background by edermunizz
 https://edermunizz.itch.io/free-pixel-art-forest

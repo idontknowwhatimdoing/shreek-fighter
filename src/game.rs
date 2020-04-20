@@ -26,9 +26,9 @@ impl SimpleState for Game {
 		let background_spritesheet = load_bg_spritesheet(world);
 		init_background(world, background_spritesheet);
 
-		let player_spritesheet = load_shrek_spritesheet(world);
+		let shrek_spritesheet = load_shrek_spritesheet(world);
 		let guard_spritesheet = load_guard_spritesheet(world);
-		init_players(world, player_spritesheet, guard_spritesheet);
+		init_players(world, shrek_spritesheet, guard_spritesheet);
 	}
 }
 
@@ -67,13 +67,13 @@ fn load_shrek_spritesheet(world: &World) -> Handle<SpriteSheet> {
 fn load_guard_spritesheet(world: &World) -> Handle<SpriteSheet> {
 	let loader = world.read_resource::<Loader>();
 	let texture_handle = loader.load(
-		"textures/guard_spritesheet.png",
+		"textures/thelonious_spritesheet.png",
 		ImageFormat::default(),
 		(),
 		&world.read_resource::<AssetStorage<Texture>>(),
 	);
 	loader.load(
-		"textures/guard_spritesheet.ron",
+		"textures/thelonious_spritesheet.ron",
 		SpriteSheetFormat(texture_handle),
 		(),
 		&world.read_resource::<AssetStorage<SpriteSheet>>(),

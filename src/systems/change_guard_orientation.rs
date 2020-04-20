@@ -23,7 +23,7 @@ impl<'a> System<'a> for ChangeGuardOrientation {
 					sprite.sprite_number = 0;
 				} else if mvt < 0.0 && player.orientation == Orientation::Right {
 					player.orientation = Orientation::Left;
-					sprite.sprite_number = 6;
+					sprite.sprite_number = 8;
 				}
 			}
 		}

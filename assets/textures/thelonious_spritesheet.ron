@@ -1,0 +1,247 @@
+// Sprites ripped by A.J. Nitro
+// From the game : Shrek: Hassle at the Castle
+
+List((
+    texture_width: 782,
+    texture_height: 133,
+    sprites: [
+		// walk right 0 (0)
+        (
+            x: 0,
+            y: 0,
+            width: 27,
+            height: 44,
+        ),
+		// walk right 1 (1)
+        (
+            x: 33,
+            y: 0,
+            width: 28,
+            height: 44,
+        ),
+		// walk right 2 (2)
+        (
+            x: 67,
+            y: 1,
+            width: 27,
+            height: 43,
+        ),
+		// walk right 3 (3)
+        (
+            x: 100,
+            y: 1,
+            width: 27,
+            height: 43,
+        ),
+		// walk right 4 (4)
+        (
+            x: 133,
+            y: 2,
+            width: 30,
+            height: 42,
+        ),
+		// walk right 5 (5)
+        (
+            x: 169,
+            y: 1,
+            width: 36,
+            height: 43,
+        ),
+		// walk right 6 (6)
+        (
+            x: 212,
+            y: 0,
+            width: 29,
+            height: 44,
+        ),
+		// walk right 7 (7)
+        (
+            x: 247,
+            y: 1,
+            width: 27,
+            height: 43,
+        ),
+		// walk left 0 (8)
+        (
+            x: 754,
+            y: 0,
+            width: 27,
+            height: 44,
+        ),
+		// walk left 1 (9)
+        (
+            x: 720,
+            y: 0,
+            width: 28,
+            height: 44,
+        ),
+		// walk left 2 (10)
+        (
+            x: 687,
+            y: 1,
+            width: 27,
+            height: 43,
+        ),
+		// walk left 3 (11)
+        (
+            x: 654,
+            y: 1,
+            width: 27,
+            height: 43,
+        ),
+		// walk left 4 (12)
+        (
+            x: 618,
+            y: 2,
+            width: 30,
+            height: 42,
+        ),
+		// walk left 5 (13)
+        (
+            x: 576,
+            y: 1,
+            width: 36,
+            height: 43,
+        ),
+		// walk left 6 (14)
+        (
+            x: 540,
+            y: 0,
+            width: 29,
+            height: 44,
+        ),
+		// walk left 7 (15)
+        (
+            x: 507,
+            y: 1,
+            width: 27,
+            height: 43,
+        ),
+		// punch right 0 (16)
+        (
+            x: 0,
+            y: 47,
+            width: 31,
+            height: 41,
+        ),
+		// punch right 1 (17)
+        (
+            x: 37,
+            y: 48,
+            width: 38,
+            height: 40,
+        ),
+		// punch right 2 (18)
+        (
+            x: 81,
+            y: 48,
+            width: 55,
+            height: 40,
+        ),
+		// punch right 3 (19)
+        (
+            x: 142,
+            y: 48,
+            width: 53,
+            height: 40,
+        ),
+		// punch right 4 (20)
+        (
+            x: 201,
+            y: 48,
+            width: 49,
+            height: 40,
+        ),
+		// punch left 0 (21)
+        (
+            x: 750,
+            y: 47,
+            width: 31,
+            height: 41,
+        ),
+		// punch left 1 (22)
+        (
+            x: 706,
+            y: 48,
+            width: 38,
+            height: 40             ,
+        ),
+		// punch left 2 (23)
+        (
+            x: 645,
+            y: 48,
+            width: 55,
+            height: 40,
+        ),
+		// punch left 3 (24)
+        (
+            x: 586,
+            y: 48,
+            width: 53,
+            height: 40,
+        ),
+		// punch left 4 (25)
+        (
+            x: 531,
+            y: 48,
+            width: 49,
+            height: 40,
+        ),
+		// idle right 0 (26)
+        (
+            x: 256,
+            y: 47,
+            width: 32,
+            height: 41,
+        ),
+		// idle right 1 (27)
+        (
+            x: 293,
+            y: 46,
+            width: 31,
+            height: 42,
+        ),
+		// idle right 2 (28)
+        (
+            x: 329,
+            y: 45,
+            width: 31,
+            height: 43,
+        ),
+		// idle right 3 (29)
+        (
+            x: 360,
+            y: 45,
+            width: 31,
+            height: 43,
+        ),
+		// idle left 0 (30)
+        (
+            x: 494,
+            y: 47,
+            width: 32,
+            height: 41,
+        ),
+		// idle left 1 (31)
+        (
+            x: 458,
+            y: 46,
+            width: 31,
+            height: 42,
+        ),
+		// idle left 2 (32)
+        (
+            x: 422,
+            y: 45,
+            width: 31,
+            height: 43,
+        ),
+		// idle left 3 (33)
+        (
+            x: 391,
+            y: 45,
+            width: 31,
+            height: 43,
+        ),
+    ],
+))

@@ -30,10 +30,10 @@ impl<'a> System<'a> for GuardJump {
 			if let Some(pressed) = input.action_is_down("guard_jump") {
 				if pressed && !self.reached_top && !self.is_descending {
 					if pos.translation().y < JUMP_HEIGHT {
-						pos.prepend_translation_y(5.0);
+						pos.prepend_translation_y(7.0);
 					}
 				} else {
-					let mut descending_speed = -5.0;
+					let mut descending_speed = -7.0;
 					if pos.translation().y > GROUND_HEIGHT {
 						if input.key_is_down(VirtualKeyCode::S) {
 							descending_speed *= 2.0;

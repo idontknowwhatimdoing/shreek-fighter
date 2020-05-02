@@ -86,7 +86,9 @@ fn main() -> amethyst::Result<()> {
 			systems::GuardIdle::default(),
 			"guard_idle",
 			&["input_system"],
-		);
+		)
+		.with(systems::ShrekHitDetection, "shrek_hit_detection", &[])
+		.with(systems::GuardHitDetection, "guard_hit_detection", &[]);
 
 	let mut game = Application::new(assets_dir, game::Game, game_data)?;
 	game.run();

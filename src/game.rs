@@ -8,10 +8,10 @@ use amethyst::renderer::{
 
 pub const ARENA_WIDTH: f32 = 563.33;
 pub const ARENA_HEIGHT: f32 = 330.0;
-pub const SHREK_WIDTH: f32 = 33.0;
-pub const SHREK_HEIGHT: f32 = 46.0;
-pub const GUARD_WIDTH: f32 = 26.0;
-pub const GUARD_HEIGHT: f32 = 46.0;
+pub const SHREK_WIDTH: f32 = 30.0;
+pub const SHREK_HEIGHT: f32 = 47.0;
+pub const GUARD_WIDTH: f32 = 17.0; // ok
+pub const GUARD_HEIGHT: f32 = 44.0;
 pub const GROUND_HEIGHT: f32 = 40.0;
 pub const JUMP_HEIGHT: f32 = 250.0;
 
@@ -99,11 +99,7 @@ fn init_players(
 	let mut shrek_pos = Transform::default();
 	shrek_pos.set_translation_xyz(0.0, GROUND_HEIGHT, 0.0);
 	let mut guard_pos = Transform::default();
-	guard_pos.set_translation_xyz(
-		ARENA_WIDTH - GUARD_WIDTH / 2.0,
-		GROUND_HEIGHT + (SHREK_HEIGHT - GUARD_HEIGHT),
-		0.0,
-	);
+	guard_pos.set_translation_xyz(ARENA_WIDTH - GUARD_WIDTH / 2.0, GROUND_HEIGHT, 0.0);
 
 	let shrek_sprite = SpriteRender {
 		sprite_sheet: shrek_spritesheet,
